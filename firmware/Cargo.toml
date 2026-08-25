@@ -1,0 +1,8 @@
+[package]
+name = "firmware"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+xpanse-api = "0.2.3"
+embedded-sdmmc = "0.10"
