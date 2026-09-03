@@ -1,0 +1,6 @@
+"Reference","Qty","Value","DNP","Exclude from BOM","Exclude from Board","Exclude from Simulation","Exclude from Position Files","Footprint","Datasheet"
+"J1","1","","","","","","${EXCLUDE_FROM_POS_FILES}","Hackxpansion:Male_Module",""
+"J2","1","Micro_SD_Card_Det1","","","","","${EXCLUDE_FROM_POS_FILES}","lcsc_footprints:C381082_TF-SMD_XKTF-015-N","https://datasheet.lcsc.com/lcsc/2110151630_XKB-Connectivity-XKTF-015-N_C381082.pdf"
+"R1","1","1k","","","","","${EXCLUDE_FROM_POS_FILES}","Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",""
+"R2","1","30k","","","","","${EXCLUDE_FROM_POS_FILES}","Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",""
+"SW1,SW2,SW3","3","SW_Push","","","","","${EXCLUDE_FROM_POS_FILES}","Button_Switch_THT:SW_PUSH_6mm",""
