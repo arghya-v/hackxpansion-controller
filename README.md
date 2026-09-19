@@ -9,7 +9,7 @@ The goal of this project is to create a compact, modular music player that can r
 
 ![3d model](https://cdn.hackclub.com/01a035e9-1e94-7a2f-9cb1-4ce6dbba37ed/image.png)
 
-![pcb](https://cdn.hackclub.com/01a05eb2-c827-7c26-9e02-c40adda546ac/image.png)
+![pcb](https://cdn.hackclub.com/01a0bb3c-b34c-7de7-be92-ac019984ff51/image.png)
 ### Firmware
 
 The firmware is responsible for communicating with the hardware.
