@@ -3,6 +3,9 @@ name = "firmware"
 version = "0.1.0"
 edition = "2024"
 
+description = "SD card rust driver"
+license = "MIT"
+
 [dependencies]
 xpanse-api = "0.2.3"
 embassy-rp = "0.10.0"
@@ -10,3 +13,5 @@ embassy-time = "0.5"
 embedded-sdmmc = "0.10"
 embedded-hal = "1.0"
 embedded-hal-bus = "0.3"
+
+
