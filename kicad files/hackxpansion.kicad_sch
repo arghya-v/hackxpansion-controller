@@ -1743,6 +1743,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 100.33) (xy 57.15 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba0d8192-51e3-43d3-a1c0-3935fa706162")
+	)
+	(wire
+		(pts
 			(xy 60.96 82.55) (xy 62.23 82.55)
 		)
 		(stroke
@@ -2535,6 +2545,84 @@
 			(project "hackxpansion"
 				(path "/3245d98d-fcf7-44e6-bdbe-8053bb8dd355"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 57.15 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "31108cca-3607-4f05-90ee-207503d3cd9d")
+		(property "Reference" "#PWR015"
+			(at 57.15 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.15 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 57.15 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "34c3cf22-1d6f-4d7b-88c5-02defbaad16f")
+		)
+		(instances
+			(project "hackxpansion"
+				(path "/3245d98d-fcf7-44e6-bdbe-8053bb8dd355"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
