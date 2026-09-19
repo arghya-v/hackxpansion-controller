@@ -1,7 +1,7 @@
 # hackxpansion module 1: SD Card Reader and Volume Control
 
 **For mp3 player app, visit:** ![hackxpansion mp3 player](https://github.com/arghya-v/hackxpansion-mp3-player)
-
+**Cargo: pkg:cargo/firmware@0.1.0**
 A custom embedded MP3 player built around the hackxpansion , using an SD card for music storage, Xpanse API for hardware/module integration, and Slint for the graphical user interface.
 
 The goal of this project is to create a compact, modular music player that can read music directly from an SD card and provide a simple dedicated interface for controlling playback.
