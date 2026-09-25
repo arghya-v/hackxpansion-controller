@@ -1,12 +1,11 @@
 # hackxpansion module 1: SD Card Reader and Volume Control
 
-**For mp3 player app, visit:** ![hackxpansion mp3 player](https://github.com/arghya-v/hackxpansion-mp3-player)
-<br/>
-**Cargo: pkg:cargo/firmware@0.1.0**
-<br/>
-A custom embedded MP3 player built around the hackxpansion , using an SD card for music storage, Xpanse API for hardware/module integration, and Slint for the graphical user interface.
+**Crates: pkg:cargo/SD_card_driver@0.1.1**
 
-The goal of this project is to create a compact, modular music player that can read music directly from an SD card and provide a simple dedicated interface for controlling playback.
+A custom SD card module with three buttons for music storage and controls, using Xpanse API for hardware/module integration.
+
+# Images
+
 ![final view](https://cdn.hackclub.com/01a05aec-dbe9-77a6-8141-e38b6f955840/image.png)
 
 ![3d model](https://cdn.hackclub.com/01a035e9-1e94-7a2f-9cb1-4ce6dbba37ed/image.png)
@@ -15,13 +14,6 @@ The goal of this project is to create a compact, modular music player that can r
 ### Firmware
 
 The firmware is responsible for communicating with the hardware.
-
-It uses:
-
-* `embassy-rp` for RP-series microcontroller peripherals
-* `xpanse-api` for HackXPansion hardware resources
-* `embedded-sdmmc` for interacting with the SD card filesystem
-* `embedded-hal` / `embedded-hal-bus` for hardware abstraction
 
 The SD card is connected through SPI.
 
@@ -37,13 +29,11 @@ The current hardware mapping uses:
 | GPIO7 | Button X   |
 | GPIO9 | SD card CS |
 
-The exact hardware configuration is defined by the Xpanse module and firmware implementation.
+See the [Xpanse API docs](https://docs.rs/xpanse-api/latest/xpanse_api/index.html)
 
 ---
 
 ## SD Card Filesystem
-
-`filesystem.rs` provides the filesystem layer used by the MP3 player.
 
 Its purpose is to abstract away the lower-level SD card communication so the application can work with files rather than dealing directly with SPI commands.
 
@@ -57,13 +47,13 @@ The filesystem layer provides functionality for:
 * Listing files in the root directory
 * Closing directories and volumes
 
-Conceptually, the stack looks like this:
+This is what the stack looks like:
 
 ```text
 SD Card
    │
    ▼
-SPI
+  SPI
    │
    ▼
 Xpanse SpiBusHandle
@@ -75,34 +65,12 @@ embedded-sdmmc
 Filesystem
    │
    ▼
-MP3 Player Application
+Application
 ```
 
-This means the application does not need to know how the SD card communicates over SPI.
+This means the application itself does not need to know how the SD card communicates over SPI.
 
 ---
 
-
-# Xpanse Integration
-
-Xpanse acts as the hardware abstraction layer between the application and the physical modules.
-
-Instead of directly controlling every GPIO from the application, hardware resources can be registered and retrieved through the Xpanse registry.
-
-For example, buttons are exposed as resources:
-
-```rust
-Box<dyn Button<A>>
-Box<dyn Button<B>>
-Box<dyn Button<X>>
-```
-
-An application can then request the resources it needs:
-
-```rust
-let button = registry.take_resource::<Box<dyn Button<A>>>()?;
-```
-
-This allows applications to remain relatively independent from the underlying hardware implementation.
-
+This was all possible thanks to [Hackspansion: A hackclub YSWS](http://hackxpansion.hackclub.com/)
 
