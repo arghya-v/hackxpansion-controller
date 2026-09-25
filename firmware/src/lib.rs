@@ -1,10 +1,11 @@
 #![no_std]
 pub mod filesystem;
+
 use embassy_rp::{
     bind_interrupts,
     gpio::{Level, Output},
-    peripherals::{DMA_CH0, DMA_CH1, SPI0},
-    spi::{self, ClkPin, MisoPin, MosiPin},
+    peripherals::{DMA_CH0, DMA_CH1},
+    spi::{self},
 };
 
 use xpanse_api::{
@@ -43,9 +44,6 @@ impl DriverMeta for SdCardDriver {
 impl<G> Driver<G> for SdCardDriver
 where
     G: BankPins,
-    G::GPIO2: ClkPin<SPI0>,
-    G::GPIO3: MisoPin<SPI0>,
-    G::GPIO4: MosiPin<SPI0>,
 {
     async fn create(
         gpio_bank: GpioBank<G>,
@@ -86,7 +84,7 @@ where
         // -------------------------
 
         let spi = bus_allocator
-            .create_spi_hardware::<SPI0, DMA_CH0, DMA_CH1, _>(
+            .create_spi_hardware::<G::SPI, DMA_CH0, DMA_CH1, _>(
                 gpio_bank.gpio2, // SCK
                 gpio_bank.gpio4, // MOSI
                 gpio_bank.gpio3, // MISO
